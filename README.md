@@ -27,4 +27,5 @@
 ```bash
 git clone https://github.com/0xInject/PayloadSmith.git
 cd PayloadSmith
-pip install -r requirements.txt  # Only if using clipboard copy
+pip install -r requirements.txt
+python3 payloadsmith.py --ip 127.0.0.1 --port 1234 --list

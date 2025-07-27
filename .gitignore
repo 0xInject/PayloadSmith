@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code settings
+.vscode/
+
+# Environment files
+.env
+*.env
+
+# Backup or test files
+*.bak
+*.swp
+*.tmp
+*.log
+*.orig
+.DS_Store
+
+# Output artifacts
+*.txt
+*.bin
+*.exe
+*.out
+*.payload
+*.encoded
+php_encoded.txt
+test.txt
+
+# Python virtualenv
+venv/
+env/
+ENV/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# Pyre type checker
+.pyre/
+
+# mypy
+.mypy_cache/
+
+# Static analysis
+.pytest_cache/
+.coverage
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# GitHub files
+*.zip
+*.tar.gz
+
+# Ignore encoded or generated scripts
+bash64.sh

@@ -1,0 +1,17 @@
+# Treat all files as text and normalize line endings
+* text=auto
+
+# Explicitly declare text files
+*.py     text
+*.sh     text
+*.md     text
+*.txt    text
+
+# Set linguist overrides for GitHub stats/highlighting
+*.py linguist-language=Python
+*.sh linguist-language=Shell
+
+# Exclude generated files from GitHub language stats
+php_encoded.txt linguist-generated
+bash64.sh linguist-generated
+test.txt linguist-generated

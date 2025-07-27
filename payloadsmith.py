@@ -1,14 +1,52 @@
-import argparse
+import os
+import sys
 import base64
 import hashlib
-from colorama import Fore, Style
 import random
 import string
-import sys
-import textwrap
-import os
 import tempfile
 import zipfile
+import textwrap
+import argparse
+from time import sleep
+from colorama import Fore, Style
+
+
+# Rich is used for anime-style terminal effects
+try:
+    from rich.console import Console
+    from rich.text import Text
+except ImportError:
+    print("[!] rich module not found. Please install it with 'pip install rich'")
+    sys.exit(1)
+
+console = Console()
+
+def anime_intro():
+    logo = r"""
+   ____            _             _     _     _     
+  |  _ \ __ _ _ __| |_ ___ _ __ | |__ (_)___| |__  
+  | |_) / _` | '__| __/ _ \ '_ \| '_ \| / __| '_ \ 
+  |  __/ (_| | |  | ||  __/ |_) | | | | \__ \ | | |
+  |_|   \__,_|_|   \__\___| .__/|_| |_|_|___/_| |_|
+                          |_|                     
+  """
+    
+    console.print(Text(logo, style="bold magenta"))
+    sleep(0.8)
+    console.print("[bold cyan]PayloadSmith 2.0[/bold cyan] - [italic yellow]Forging Shells with Style...[/italic yellow]", justify="center")
+    sleep(1)
+    anime_quotes = [
+        "'The world isn’t perfect. But it’s there for us, trying the best it can. That’s what makes it so damn beautiful.' - Roy Mustang",
+        "'Power comes in response to a need, not a desire. You have to create that need.' - Goku",
+        "'In the world of hacking, there are no rules... just payloads.'",
+        "'You should enjoy the little detours. Because that's where you'll find the things more important than what you want.' - Ging Freecss"
+    ]
+    console.print(random.choice(anime_quotes), style="italic green")
+    sleep(1.2)
+    console.print("\n[bold white]Initializing engine...\nLoading shell database...\nEstablishing connection to localhost...[/bold white]", style="dim")
+    sleep(1.3)
+    console.print("[green bold]\n[+] Ready to deploy. Choose your payload wisely.[/green bold]\n")
 
 # Payload templates
 payload_templates = {
@@ -115,6 +153,7 @@ def multi_payload(ip, port, obfuscate=False, encode=None, no_copy=False, bind_fi
             print(f"[!] Failed to generate {shell} payload: {e}")
 
 def main():
+    anime_intro()
     parser = argparse.ArgumentParser(description="PayloadSmith - Reverse Shell Payload Generator")
     parser.add_argument("--shell", help="Type of shell to generate")
     parser.add_argument("--ip", required=True, help="Attacker IP")

@@ -8,6 +8,8 @@
 
 ---
 
+![Demo Animation](assets/PayloadSmith.png)
+
 ## 💣 Features
 
 - 🎯 Generate payloads for multiple platforms: Bash, Python, PHP, Netcat, PowerShell, Python HTTPS
